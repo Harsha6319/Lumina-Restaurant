@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050508;
+  --color-primary: #00f3ff;
+  --color-accent: #b026ff;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: rgba(0, 243, 255, 0.3);
+    color: var(--color-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Neon Utilities */
+.neon-text-primary {
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.7), 0 0 20px rgba(0, 243, 255, 0.5), 0 0 40px rgba(0, 243, 255, 0.3);
+}
+.neon-text-accent {
+  text-shadow: 0 0 10px rgba(176, 38, 255, 0.7), 0 0 20px rgba(176, 38, 255, 0.5), 0 0 40px rgba(176, 38, 255, 0.3);
+}
+.neon-border-primary {
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.5), inset 0 0 10px rgba(0, 243, 255, 0.3);
+  border-color: rgba(0, 243, 255, 0.8);
+}
+.neon-border-accent {
+  box-shadow: 0 0 10px rgba(176, 38, 255, 0.5), inset 0 0 10px rgba(176, 38, 255, 0.3);
+  border-color: rgba(176, 38, 255, 0.8);
+}
+.neon-glow {
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  @apply fixed top-0 left-0 w-6 h-6 rounded-full bg-primary mix-blend-difference pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out;
+}
+.custom-cursor.hovering {
+  @apply scale-[2.5] bg-white/80;
+}
+
+/* Smooth Scrolling / Lenis styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Utils */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+}
