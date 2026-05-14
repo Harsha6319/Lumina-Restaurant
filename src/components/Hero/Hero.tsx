@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+
 import heroBg from '../../assets/hero_bg.png';
 
 const Hero: React.FC = () => {
